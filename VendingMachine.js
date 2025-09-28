@@ -64,13 +64,20 @@ class VendingMachine {
             };
         }
 
+        if (!this.selectedProduct) {
+            return {
+                ok: false,
+                message: 'Please select a product first',
+            };
+        }
+
         this.balance += bill;
 
         if (this.selectedProduct.price > this.balance) {
             const dueAmount = this.selectedProduct.price - this.balance;
             return {
                 ok: true,
-                message: `Insert more ${dueAmount}`,
+                message: `Insert more ₹${dueAmount}`,
             };
         }
         return this.dispense(this.selectedProduct);
@@ -83,10 +90,13 @@ class VendingMachine {
         this.balance = 0;
         this.selectedProduct = null;
 
+        const changeMessage = change.length > 0 ?
+            `Please collect your change: ₹${change.join(', ₹')}` :
+            'No change required';
 
         return {
             ok: true,
-            message: `Product has been dispense, Please collect your change: ${change.join(',')}`,
+            message: `${product.name} dispensed! ${changeMessage}`,
         };
 
     }
