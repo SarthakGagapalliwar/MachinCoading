@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vending Machine</title>
+    <link rel="stylesheet" href="VendingMachin.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🍫 Smart Vending Machine</h1>
+        </header>
+
+        <main class="machine-body">
+            <div class="display-panel">
+                <div class="info-row">
+                    <span class="label">Balance:</span>
+                    <span id="balance" class="value">0</span>
+                    <span class="currency">₹</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Selected:</span>
+                    <span id="selectedProduct" class="value">None</span>
+                </div>
+                <div id="message" class="message"></div>
+            </div>
+
+            <section class="products-section">
+                <h2>Available Products</h2>
+                <div class="allProduct"></div>
+            </section>
+
+            <section class="payment-section">
+                <h3>💰 Insert Money</h3>
+                <div class="input-group">
+                    <input type="number" id="bill" placeholder="Enter amount (₹)" min="1">
+                    <span class="input-help">Press Enter to insert</span>
+                </div>
+            </section>
+
+            <section class="admin-section">
+                <h3>🔧 Admin Panel</h3>
+                <div class="restock-form">
+                    <div class="input-group">
+                        <input id="productName" placeholder="Product name" required>
+                        <input id="productPrice" placeholder="Price (₹)" type="number" min="1" required>
+                        <button id="restock" class="btn-primary">Add Product</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="VendingMachine.js"></script>
+</body>
+
+</html>
