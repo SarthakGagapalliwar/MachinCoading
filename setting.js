@@ -1,1 +1,1 @@
-console.log("Setting page will added")
+console.log("Setting page will added in the new commit ")
