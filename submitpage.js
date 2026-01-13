@@ -1,1 +1,1 @@
-console.log("trial ");
+console.log("trial");
